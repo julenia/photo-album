@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function AlbumsList(props) {
   return (<div>
@@ -7,7 +8,7 @@ export default function AlbumsList(props) {
     There are { props.albums.length } albums available.
     <ul>
     {props.albums.map(album => {
-      return <li key={album.id}>{album.title}</li>
+      return <Link to={`albums/:${album.id}`} key={album.id}><li key={album.id}>{album.title}</li></Link>
     })}
     </ul>
   </div>)
